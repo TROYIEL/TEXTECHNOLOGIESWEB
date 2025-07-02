@@ -1,0 +1,130 @@
+body {
+
+  font-family: 'Inter', sans-serif;
+  background-color: black;
+  color: white;
+}
+
+.container {
+  display: flex;
+  height: 80vh;
+}
+
+.left, .right {
+  flex: 1;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.left {
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.left h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.radio-group {
+  display: flex;
+  gap: 1rem;
+}
+
+.radio-group label {
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+form input,
+form select,
+form textarea {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid white;
+  padding: 0.5rem;
+  color: white;
+  font-size: 0.9rem;
+}
+
+form input::placeholder,
+form textarea::placeholder {
+  color: #888;
+}
+
+form button {
+  padding: 0.7rem;
+  border: px solid white;
+  background: none;
+  color: white;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: 0.6s;
+}
+
+form button:hover {
+  background-color: white;
+  color: black;
+}
+
+
+.right {
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.right img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-top-right-radius: 1.5rem;
+  border-bottom-right-radius: 1.5rem;
+}
+.btn {
+  --c: #ffffff;
+  background: linear-gradient(90deg, #0000 33%, #fff5, #0000 67%) var(--_p,100%)/300% no-repeat,
+    orangered;
+  color: #0000;
+  border: none;
+  transform: perspective(500px) rotateY(calc(20deg*var(--_i,-1)));
+  text-shadow: calc(var(--_i,-1)* 0.08em) -.01em 0   var(--c),
+    calc(var(--_i,-1)*-0.08em)  .01em 2px rgba(83, 3, 3, 0.267);
+  outline-offset: .1em;
+  transition: 0.3s;
+}
+
+button:hover,
+button:focus-visible {
+  --_p: 0%;
+  --_i: 1;
+}
+
+button:active {
+  text-shadow: none;
+  color: var(--c);
+  
+  transition: 0s;
+}
+
+button {
+  font-family: system-ui, sans-serif;
+  font-weight: bold;
+  font-size: 2rem;
+  margin: 0;
+  cursor: pointer;
+  padding: .1em .3em;
+}

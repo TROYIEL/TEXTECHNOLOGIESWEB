@@ -1,0 +1,129 @@
+/* navbar.css */
+
+/* ====== CSS Variables for quick theming ====== */
+:root {
+  --brand: orangered;
+  --text-light: #fff;
+  --nav-height: 72px;
+}
+
+/* ====== Base nav layout ====== */
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  /* Use fluid padding instead of fixed margin */
+  padding: 0 clamp(1rem, 6vw, 120px);
+  height: var(--nav-height);
+  background: transparent;       /* keeps current style */
+  color: var(--text-light);
+  z-index: 150;                  /* on top of content */
+}
+
+.nav-logo {
+  font-family: "Outfit", sans-serif;
+  font-size: clamp(1.5rem, 2vw + 1rem, 2.625rem); /* scales smoothly */
+  font-weight: 500;
+  color: var(--brand);
+  user-select: none;
+}
+
+/* ====== Menu ====== */
+.nav-menu {
+  display: flex;
+  gap: clamp(1rem, 5vw, 90px);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* CTA button */
+.nav-contact {
+  border-radius: 50px;
+  padding: 10px 38px;
+  background: #fff;
+  color: var(--brand);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* Links */
+.nav-link {
+  color: var(--text-light);
+  font-family: "Outfit", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  color: var(--brand);
+}
+
+/* ====== Mobile toggle button ====== */
+.nav-toggle {
+  display: none;           /* hidden on desktop */
+  background: none;
+  border: none;
+  font-size: 1.9rem;
+  color: var(--text-light);
+  cursor: pointer;
+}
+
+/* ====== BREAKPOINTS ====== */
+
+/* Tablet & below */
+@media (max-width: 992px) {
+  .nav-menu {
+    gap: 3rem;             /* tighten spacing a bit sooner */
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: block;        /* show hamburger */
+  }
+
+  /* turn menu into a swipe‑in drawer */
+  .nav-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: min(70%, 300px);
+    flex-direction: column;
+    background: #000;      /* same color as header for continuity */
+    padding-top: var(--nav-height);
+    transform: translateX(100%); /* off‑canvas */
+  }
+
+  /* when ‘open’ class is added */
+  .nav-menu.open {
+    transform: translateX(0);
+  }
+
+  /* make every menu item touch‑friendly */
+  .nav-menu li {
+    width: 100%;
+    text-align: center;
+    padding: 1.2rem 0;
+  }
+
+  /* full‑width CTA button on mobile */
+  .nav-contact {
+    display: inline-block;
+    width: 80%;
+  }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+  .nav-logo {
+    font-size: clamp(1.25rem, 6vw, 2rem);
+  }
+}

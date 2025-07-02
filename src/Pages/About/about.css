@@ -1,0 +1,77 @@
+.about-container {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  width: 100%;
+}
+
+.about-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+}
+.positioned-text {
+  position: relative;
+  z-index: 2;
+  color: orangered;
+  text-align: center;
+  padding: 100px;
+  padding-top: 2px;
+  font-family: "Outfit", sans-serif;
+  font-weight: 100;
+  font-size: 30px;
+}
+.about-text {
+  position: relative;
+  z-index: 2;
+  color: white;
+  text-align: left;
+  padding: 40px;
+  padding-top: 150px;
+  padding-right: 1000px;
+  font-size: 9px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.about-heading1 {
+  color: orangered;
+  padding-right: 200px;
+}
+.about-text2 {
+  position: relative;
+  z-index: 2;
+  color: white;
+  text-align: right;
+  padding: 40px;
+  padding-top: 150px;
+  padding-left: 1000px;
+  font-size: 9px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.bottom-left-pattern {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  padding-left: 150px;
+  padding-bottom: 50px;
+  z-index: 3;
+}
+button {
+  --c: #fff;
+ /* text color */
+  background: linear-gradient(90deg, #0000 33%, #fff5, #0000 67%) var(--_p,100%)/300% no-repeat,
+    #004dff;
+ /* background color */
+  color: #0000;
+  border: none;
+  transform: perspective(500px) rotateY(calc(20deg*var(--_i,-1)));
+  text-shadow: calc(var(--_i,-1)* 0.08em) -.01em 0   var(--c),
+    calc(var(--_i,-1)*-0.08em)  .01em 2px #0004;
+  outline-offset: .1em;
+  transition: 0.3s;
+}
+
+
+

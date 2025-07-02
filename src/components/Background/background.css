@@ -1,0 +1,27 @@
+/* Use CSS custom props so you only change timing in one place */
+:root {
+  --fade-ms: 1000ms;
+}
+
+/* 1️⃣ Base full‑viewport layer */
+.bg {
+  position: fixed;
+  inset: 0;                       /* shorthand for top/right/bottom/left 0 */
+  height: 100vh;                  /* desktop browsers */
+  height: 50dvh;                 /* mobile dynamic viewport */
+  background-size: cover;
+  background-position: center;
+  will-change: opacity;           /* hint GPU */
+  transition: opacity var(--fade-ms) ease-in-out;
+  z-index: -1;
+}
+
+/* Safari < 15 fallback because it doesn’t know 100dvh */
+@supports (height: 100dvh) {
+  .bg { height: 100dvh; }
+}
+
+/* 2️⃣ Active fade‑state */
+.bg--fade {
+  opacity: 0;
+}

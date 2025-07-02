@@ -1,0 +1,41 @@
+.patterns-scroll-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  background: transparent;
+  padding: 0px 0;
+  padding-left: 500px;
+  
+}
+
+.patterns-track {
+  display: flex;
+  animation: scrollLeft 20s linear infinite;
+  width: max-content;
+}
+
+.pattern-logo {
+  flex: 0 0 auto;
+  margin: 0 20px;
+}
+
+.pattern-logo img {
+  width: 80px;      /* Adjust logo size */
+  height: auto;
+  opacity: 0.9;
+  transition: transform 0.3s ease;
+}
+
+.pattern-logo img:hover {
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+@keyframes scrollLeft {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
